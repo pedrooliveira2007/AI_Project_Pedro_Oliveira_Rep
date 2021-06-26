@@ -22,7 +22,7 @@ public class Pawn_Manager : MonoBehaviour
     /// <summary>
     /// Variable that defines the ammount of time the slow down will last for.
     /// </summary>
-    private float timer = 3;
+    private float timer = 1;
     /// <summary>
     /// Variable that holds current timer for the ammount of time the slow down will last for.
     /// </summary>

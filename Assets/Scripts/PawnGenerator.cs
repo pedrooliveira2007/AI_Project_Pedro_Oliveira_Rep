@@ -63,7 +63,7 @@ public class PawnGenerator : MonoBehaviour
     {
         spawnedAgents++;
 
-        int value = Mathf.FloorToInt(Random.Range(0, spawnLocation.Length - 1));
+        int value = Mathf.FloorToInt(Random.Range(0, spawnLocation.Length ));
         Instantiate(pawnPrefab, spawnLocation[value].position, spawnLocation[value].rotation).GetComponent<Pawn_Manager>().
            SetPersonality(personalityArray[Mathf.FloorToInt(Random.Range(0, personalityArray.Length - 1))], gps);
 
