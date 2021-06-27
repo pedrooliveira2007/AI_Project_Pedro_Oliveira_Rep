@@ -122,7 +122,7 @@ public class Pawn_Manager : MonoBehaviour
     /// Returns the bool of eating.
     /// </summary>
     /// <returns></returns>
-    internal bool isEating()
+    internal bool IsEating()
     {
         return eating;
     }
@@ -140,7 +140,7 @@ public class Pawn_Manager : MonoBehaviour
     /// Return if the player is subscribed to seat list or not.
     /// </summary>
     /// <returns></returns>
-    internal bool isSubscribed()
+    internal bool IsSubscribed()
     {
         return subscribed;
     }
@@ -149,7 +149,7 @@ public class Pawn_Manager : MonoBehaviour
     /// Return if nps is resting or not
     /// </summary>
     /// <returns></returns>
-    internal bool isResting()
+    internal bool IsResting()
     {
         return resting;
     }
@@ -170,7 +170,7 @@ public class Pawn_Manager : MonoBehaviour
     /// Checks if the user is tired. In other words, if it lower than maxFatigue/4.
     /// </summary>
     /// <returns></returns>
-    internal bool isTired()
+    internal bool IsTired()
     {
         if (currentFatigue <= maxFatigue/4)
         {
@@ -184,7 +184,7 @@ public class Pawn_Manager : MonoBehaviour
     /// Checks if the user is hungry. In other words, if it lower than maxHunger/4.
     /// </summary>
     /// <returns></returns>
-    internal bool isHungry()
+    internal bool IsHungry()
     {
         if (currentHunger <= maxHunger/4)
         {
@@ -196,11 +196,11 @@ public class Pawn_Manager : MonoBehaviour
     /// <summary>
     /// Moves the agent to the closest exit given via the GPS.
     /// </summary>
-    internal void fleeToExitAction()
+    internal void FleeToExitAction()
     {
         myAgent.isStopped = false;
         myAgent.speed = moveSpeed;
-        myAgent.SetDestination(gps.GetExit(transform.position));
+        myAgent.destination = gps.GetExit(transform.position);
         currentState = 0;
         goal = 5;
     }
@@ -210,7 +210,7 @@ public class Pawn_Manager : MonoBehaviour
     /// If none are Available subscribes to the FoodZone_Manager, waiting until
     /// a seat has been opened and then going to it.
     /// </summary>
-    internal void goEatAction()
+    internal void GoEatAction()
     {
         myAgent.isStopped = false;
         if (gps.IsFoodOpen())
@@ -232,7 +232,7 @@ public class Pawn_Manager : MonoBehaviour
     /// <summary>
     /// Moves the agent to the first concert vector3 given via the GPS.
     /// </summary>
-    internal void goConcertAction()
+    internal void GoConcertAction()
     {
         if(goal !=1)
         {
@@ -259,7 +259,7 @@ public class Pawn_Manager : MonoBehaviour
     /// Checks if the user is in panic.
     /// </summary>
     /// <returns></returns>
-    internal bool isInPanic()
+    internal bool IsInPanic()
     {
         return panicking;
     }

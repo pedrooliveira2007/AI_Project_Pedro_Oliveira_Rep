@@ -41,7 +41,6 @@ public class Location_Manager : MonoBehaviour
     private int currentGreenZone = 0;
 
 
-
     /// <summary>
     /// Returns a vector3 of one of the Concert locations.
     /// </summary>

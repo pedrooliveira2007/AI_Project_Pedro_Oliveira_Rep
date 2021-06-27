@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3460039855240810943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.981394, y: 0, z: -3.0323715}
+  m_LocalPosition: {x: -141.73709, y: 0, z: -9.999927}
   m_LocalScale: {x: 10.199995, y: 0.33, z: 10.199995}
   m_Children:
   - {fileID: 3195566281387799083}
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpansionScale: 3
-  _fireLifeTime: 10
 --- !u!208 &8065320164054718882
 NavMeshObstacle:
   m_ObjectHideFlags: 0

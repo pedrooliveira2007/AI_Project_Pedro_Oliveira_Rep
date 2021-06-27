@@ -15,6 +15,7 @@ TagManager:
   - Waiting/Moving
   - Rest
   - Available
+  - Exit
   layers:
   - Default
   - TransparentFX

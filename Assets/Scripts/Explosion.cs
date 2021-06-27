@@ -4,7 +4,7 @@ public class Explosion : MonoBehaviour
 {
     private float ExpansionScale = 10f;
     [SerializeField]
-    private float _explosionLifeTime = 1f;
+    private float _explosionLifeTime = 3f;
 
     private float _actualTime = 0f;
     [SerializeField]
@@ -21,7 +21,7 @@ public class Explosion : MonoBehaviour
     {
         if (_actualTime >= _explosionLifeTime)
         {
-            Debug.Log("startFire,madahfoka");
+           
             Instantiate(_fire.gameObject, transform.position, new Quaternion());
             _fire.StartFire(transform.position, transform.localScale);
             Destroy(this.gameObject);

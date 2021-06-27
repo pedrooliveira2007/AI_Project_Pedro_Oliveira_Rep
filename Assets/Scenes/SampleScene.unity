@@ -2038,7 +2038,7 @@ GameObject:
   - component: {fileID: 284693664}
   m_Layer: 0
   m_Name: exit
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -2054,8 +2054,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.69, z: 1}
-  m_Center: {x: -0.31, y: 0.2, z: 0}
+  m_Size: {x: 0.9518724, y: 0.69, z: 0.9831079}
+  m_Center: {x: -0.034063753, y: 0.20000002, z: -0.00844623}
 --- !u!23 &284693665
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3184,7 +3184,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 2.38, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &372213788
 MeshRenderer:
@@ -3243,7 +3243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372213786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -156.3365, y: -1.3023, z: -130}
+  m_LocalPosition: {x: -156.3365, y: -2.3, z: -130}
   m_LocalScale: {x: 47.332226, y: 5.395, z: 100.164}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4316,7 +4316,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 2.38, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &599623631
 MeshRenderer:
@@ -4375,7 +4375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599623629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -156.3365, y: -1.3023, z: 130}
+  m_LocalPosition: {x: -156.3365, y: -2.3, z: 130}
   m_LocalScale: {x: 47.332226, y: 5.395, z: 100.164}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6638,7 +6638,7 @@ GameObject:
   - component: {fileID: 972238029}
   m_Layer: 0
   m_Name: exit (2)
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -12983,7 +12983,7 @@ GameObject:
   - component: {fileID: 2020274265}
   m_Layer: 0
   m_Name: exit (1)
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295

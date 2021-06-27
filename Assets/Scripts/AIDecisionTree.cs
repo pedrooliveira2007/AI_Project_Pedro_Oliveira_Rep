@@ -19,9 +19,9 @@ public class AIDecisionTree : MonoBehaviour
         pawn = GetComponent<Pawn_Manager>();
 
         // Create the leaf actions
-        IDecisionTreeNode fleeToExit = new ActionNode(pawn.fleeToExitAction);
-        IDecisionTreeNode goEat = new ActionNode(pawn.goEatAction);
-        IDecisionTreeNode goToConcert = new ActionNode(pawn.goConcertAction);
+        IDecisionTreeNode fleeToExit = new ActionNode(pawn.FleeToExitAction);
+        IDecisionTreeNode goEat = new ActionNode(pawn.GoEatAction);
+        IDecisionTreeNode goToConcert = new ActionNode(pawn.GoConcertAction);
         IDecisionTreeNode goRest = new ActionNode(pawn.RestAction);
         IDecisionTreeNode nothing = new ActionNode(pawn.Nothing);
 
@@ -35,10 +35,10 @@ public class AIDecisionTree : MonoBehaviour
 
         //Create nodes
 
-        IDecisionTreeNode isTired = new DecisionNode(pawn.isTired, goRest, goToConcert);
-        IDecisionTreeNode isHungry = new DecisionNode(pawn.isHungry, goEat, isTired);
-        IDecisionTreeNode isSubscribed = new DecisionNode(pawn.isSubscribed, nothing, isHungry);
-        root = new DecisionNode(pawn.isInPanic, fleeToExit, isHungry);
+        IDecisionTreeNode IsTired = new DecisionNode(pawn.IsTired, goRest, goToConcert);
+        IDecisionTreeNode IsHungry = new DecisionNode(pawn.IsHungry, goEat, IsTired);
+        IDecisionTreeNode IsSubscribed = new DecisionNode(pawn.IsSubscribed, nothing, IsHungry);
+        root = new DecisionNode(pawn.IsInPanic, fleeToExit, IsHungry);
 
 
     }
@@ -46,7 +46,7 @@ public class AIDecisionTree : MonoBehaviour
     // Run the decision tree and execute the returned action
     private void FixedUpdate()
     {
-        if(!pawn.isEating() && !pawn.isResting() && pawn.GetGoal() != 3 && pawn.GetGoal() != 4)
+        if(!pawn.IsEating() && !pawn.IsResting() && pawn.GetGoal() != 3 && pawn.GetGoal() != 4)
         {
             ActionNode actionNode = root.MakeDecision() as ActionNode;
             actionNode.Execute();

@@ -1,35 +1,35 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Fire : MonoBehaviour
-{
+{/// <summary>
+/// Fire Expansion rate.
+/// </summary>
     [SerializeField]
     private float ExpansionScale = 1f;
-    [SerializeField]
-    private float _fireLifeTime = 5f;
-    private float _actualTime = 0f;
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        ExpandFire();
 
-        if (_actualTime >= _fireLifeTime)
-        {
-            Debug.Log("destroy fire");
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            this.gameObject.transform.localScale += (ExpansionScale * new Vector3(1f, 0, 1f) * Time.fixedDeltaTime);
-            _actualTime += Time.fixedDeltaTime;
-        }
     }
 
-
+    /// <summary>
+    /// start the fire at the given position with the given scale
+    /// </summary>
+    /// <param name="_position">center position</param>
+    /// <param name="_scale">initial fire size</param>
     internal void StartFire(Vector3 _position, Vector3 _scale)
     {
-        this.gameObject.transform.position = _position;
-        this.gameObject.transform.localScale = new Vector3(_scale.x, 0.33f, _scale.y);
+        gameObject.transform.position = _position;
+        gameObject.transform.localScale = new Vector3(_scale.x, 0.33f, _scale.y);
+    }
+    /// <summary>
+    /// spansion methos used in fire propagation
+    /// </summary>
+    internal void ExpandFire()
+    {
+        gameObject.transform.localScale += (ExpansionScale * new Vector3(1f, 0, 1f) * Time.fixedDeltaTime);
     }
 }
