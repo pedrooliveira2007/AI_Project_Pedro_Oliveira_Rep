@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+ /// <summary>
+ /// class responsible for escalate the explosions
+ /// </summary>
 public class Explosion : MonoBehaviour
 {
     private float ExpansionScale = 10f;

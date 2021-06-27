@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
-
+/// <summary>
+/// class responsible to generate the agents
+/// </summary>
 public class PawnGenerator : MonoBehaviour
 {
     /// <summary>
