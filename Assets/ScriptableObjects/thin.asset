@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: thin
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  maxHunger: 80
+  maxHunger: 280
   minHunger: 50
   eatRate: 0.6
   hungerRate: 1
-  maxFatigue: 90
-  minFatigue: 70
+  maxFatigue: 190
+  minFatigue: 30
   myMaterial: {fileID: 2100000, guid: b5bb725b172515d45bc5f2583e4b8a98, type: 2}

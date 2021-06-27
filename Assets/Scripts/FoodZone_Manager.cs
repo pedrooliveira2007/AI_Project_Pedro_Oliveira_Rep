@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class FoodZone_Manager : MonoBehaviour
@@ -60,7 +59,7 @@ public class FoodZone_Manager : MonoBehaviour
             }
             else
             {
-                Debug.Log("NO");
+                Debug.Log("NO available tables");
             }
         }
 
@@ -77,7 +76,7 @@ public class FoodZone_Manager : MonoBehaviour
     }
 
     /// <summary>
-    /// Checks if there is an available seat or not.
+    /// Checks if there is an Available seat or not.
     /// </summary>
     /// <returns></returns>
     internal bool isSeatFree()
@@ -96,7 +95,7 @@ public class FoodZone_Manager : MonoBehaviour
 
 
     /// <summary>
-    /// Used to inform the script if there is a new available seat.
+    /// Used to inform the script if there is a new Available seat.
     /// </summary>
     /// <param name="pos"></param>
     internal void SeatFree(Seat_Manager pos)

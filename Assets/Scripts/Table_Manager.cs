@@ -24,7 +24,7 @@ public class Table_Manager : MonoBehaviour
     }
 
     /// <summary>
-    /// Finds how many seats are available.
+    /// Finds how many seats are Available.
     /// </summary>
     /// <returns></returns>
     internal int GetOpenSeats()

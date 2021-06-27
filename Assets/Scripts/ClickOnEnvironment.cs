@@ -6,7 +6,7 @@ public class ClickOnEnvironment : MonoBehaviour
     [SerializeField]
     private GameObject explosion;
     [SerializeField]
-    private string layerMask = "Floor";
+    private LayerMask layer;
     void Start()
     {
         _camera = Camera.main;
@@ -20,8 +20,7 @@ public class ClickOnEnvironment : MonoBehaviour
             Debug.Log("clicked");
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, LayerMask.GetMask(layerMask)))
+            if (Physics.Raycast(ray, out hit,1000f,layer ))
             {
                 GenerateExplosion(hit.point);
                 Debug.Log("gen explosion  " + hit.point);

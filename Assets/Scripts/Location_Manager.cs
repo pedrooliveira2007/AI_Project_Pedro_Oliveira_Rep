@@ -57,7 +57,7 @@ public class Location_Manager : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns a boolean depending on if there is a seat available or not.
+    /// Returns a boolean depending on if there is a seat Available or not.
     /// </summary>
     /// <returns></returns>
     internal bool IsFoodOpen()

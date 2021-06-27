@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: fat
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
-  maxHunger: 180
+  maxHunger: 310
   minHunger: 40
   eatRate: 1.2
   hungerRate: 1.7
-  maxFatigue: 60
+  maxFatigue: 200
   minFatigue: 50
   myMaterial: {fileID: 2100000, guid: eea219a2817153c4889c658ad7546e39, type: 2}

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: average
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
-  maxHunger: 110
+  maxHunger: 290
   minHunger: 60
   eatRate: 1
   hungerRate: 1
-  maxFatigue: 110
+  maxFatigue: 200
   minFatigue: 90
   myMaterial: {fileID: 2100000, guid: 4b72d39ea3bdc234d90d8402a42558bc, type: 2}

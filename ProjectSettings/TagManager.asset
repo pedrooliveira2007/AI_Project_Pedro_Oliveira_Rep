@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Panic
+  - Cripple
+  - Explosion
+  - UI
+  - Stage
+  - Eating
+  - Resting
+  - GoSeat
+  - Waiting/Moving
+  - Rest
+  - Available
   layers:
   - Default
   - TransparentFX

@@ -12,10 +12,11 @@ public class Pawn_Manager : MonoBehaviour
     /// <summary>
     /// 0 = Moving 1 = AtZone1 2 = AtZone2 3 = Eating 4 = Resting 5 = Waiting
     /// </summary>
+    [SerializeField]
     private int currentState = 5;
 
     /// <summary>
-    /// 0 = Waiting/Roaming 1 = GoZone1 2 = GoZone2 3 = GoEating 4 = GoResting 5 = Exit
+    /// 0 = Waiting/Roaming , 1 = GoStage , 3 = GoEating , 4 = GoResting , 5 = Exit
     /// </summary>
     public int goal = 0;
 
@@ -40,10 +41,12 @@ public class Pawn_Manager : MonoBehaviour
     /// <summary>
     /// Agent's current hunger.
     /// </summary>
+    [SerializeField]
     public float currentHunger = 90;
     /// <summary>
     /// Agent's eating speed.
     /// </summary>
+  
     private float eatRate = 1;
     /// <summary>
     /// Agent's hunger rate multiplyer.
@@ -56,6 +59,7 @@ public class Pawn_Manager : MonoBehaviour
     /// <summary>
     /// Agent's current fatigue.
     /// </summary>
+    [SerializeField]
     private float currentFatigue = 90;
     /// <summary>
     /// Defines if the player is slowing down or not.
@@ -132,13 +136,17 @@ public class Pawn_Manager : MonoBehaviour
         return goal;
     }
 
+    /// <summary>
+    /// Return if the player is subscribed to seat list or not.
+    /// </summary>
+    /// <returns></returns>
     internal bool isSubscribed()
     {
         return subscribed;
     }
 
     /// <summary>
-    /// Returns the bool of resting.
+    /// Return if nps is resting or not
     /// </summary>
     /// <returns></returns>
     internal bool isResting()
@@ -198,8 +206,8 @@ public class Pawn_Manager : MonoBehaviour
     }
 
     /// <summary>
-    /// Moves the agent to the closest available Seat_Manager, given via the GPS.
-    /// If none are available subscribes to the FoodZone_Manager, waiting until
+    /// Moves the agent to the closest Available Seat_Manager, given via the GPS.
+    /// If none are Available subscribes to the FoodZone_Manager, waiting until
     /// a seat has been opened and then going to it.
     /// </summary>
     internal void goEatAction()
@@ -209,13 +217,13 @@ public class Pawn_Manager : MonoBehaviour
         {
             subscribeVector = gps.GetFoodSpot();
             myAgent.SetDestination(subscribeVector);
-            currentState = 0;
+            currentState = 0; //walk to the available seat
             goal = 3;
         }
         else
         {
-            gps.SubscribeToMeal(this);
-            currentState = 0;
+            gps.SubscribeToMeal(this); //subscribed to seat wait list
+            currentState = 5; //wait till the seat is available
             goal = 3;
         }
 
@@ -333,16 +341,17 @@ public class Pawn_Manager : MonoBehaviour
             if (currentHunger >= maxHunger)
             {
                 currentHunger = maxHunger;
-                currentState = 0;
-                goal = 0;
                 eating = false;
                 currentSeat.SeatFree();
+                currentState = 0;
+                goal = 0;
+               
             }
             else
             {
                 currentHunger += Time.fixedDeltaTime * 2 * eatRate;
                 // They are sitting while eating, it should reduce the fatigue by a slower ammount.
-                currentFatigue += Time.fixedDeltaTime / 3;
+                currentFatigue += Time.fixedDeltaTime / 5;
             }
         }
         else
@@ -405,7 +414,8 @@ public class Pawn_Manager : MonoBehaviour
         // If the collider is the seat.
         if (other.gameObject.tag == "Available" && goal == 3)
         {
-            if (other.gameObject.transform.position == subscribeVector)
+            Debug.Log("Im here");
+                if (other.gameObject.transform.position == subscribeVector)
             {
                 currentState = 3;
                 currentSeat = other.gameObject.GetComponent<Seat_Manager>();
