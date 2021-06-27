@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// class responsible for read the mouse click and generate the explosions
+/// </summary>
 public class ClickOnEnvironment : MonoBehaviour
 {
     private Camera _camera;
